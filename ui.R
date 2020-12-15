@@ -9,7 +9,7 @@
 
 library(shiny)
 library(leaflet)
-
+library(leaflet.extras)
 library(DBI)
 library(RPostgres)
 library(glue)
@@ -34,9 +34,7 @@ for (a in unique(dataframe$namagedunggereja)) {
         addTiles() %>% 
         setView(lng = unique(temp$longitudegedunggereja),lat = unique(temp$latitudegedunggereja), zoom = 12) %>% 
         addMarkers(popup = unique(popup),clusterOptions = markerClusterOptions(),group ="markers",label =  unique(temp$namagedunggereja),icon =makeIcon("~/UKK UTY/Map Project/mapsku/mapsku/salib.png",iconWidth = 40,iconHeight = 40),lng = unique(temp$longitudegedunggereja),lat = unique(temp$latitudegedunggereja)) %>% 
-        addPopups(popup = "Click mee twice",lng = unique(temp$longitudegedunggereja),lat = unique(temp$latitudegedunggereja)) %>% 
-        inlmisc::AddSearchButton(group = "markers",textPlaceholder = "Nama Gereja") 
-    
+        addSearchFeatures(targetGroups = "markers",searchFeaturesOptions(textPlaceholder =" Nama Gereja"))
 }
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(

@@ -1,4 +1,4 @@
-my_packages = c("shiny", "leaflet","glue","DBI","RPostgres")
+my_packages = c("shiny", "leaflet","glue","DBI","RPostgres","leaflet.extras")
 
 install_if_missing = function(p) {
   if (p %in% rownames(installed.packages()) == FALSE) {

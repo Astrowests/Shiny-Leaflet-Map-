@@ -33,7 +33,7 @@ for (a in unique(dataframe$namagedunggereja)) {
     m <- leaflet()%>%
         addTiles() %>% 
         setView(lng = unique(temp$longitudegedunggereja),lat = unique(temp$latitudegedunggereja), zoom = 12) %>% 
-        addMarkers(popup = unique(popup),clusterOptions = markerClusterOptions(),group ="markers",label =  unique(temp$namagedunggereja),icon =makeIcon("~/UKK UTY/Map Project/mapsku/mapsku/salib.png",iconWidth = 40,iconHeight = 40),lng = unique(temp$longitudegedunggereja),lat = unique(temp$latitudegedunggereja)) %>% 
+        addMarkers(popup = unique(popup),clusterOptions = markerClusterOptions(),group ="markers",label =  unique(temp$namagedunggereja),icon =makeIcon("salib.png",iconWidth = 40,iconHeight = 40),lng = unique(temp$longitudegedunggereja),lat = unique(temp$latitudegedunggereja)) %>% 
         addSearchFeatures(targetGroups = "markers",searchFeaturesOptions(textPlaceholder =" Nama Gereja"))
 }
 # Define UI for application that draws a histogram

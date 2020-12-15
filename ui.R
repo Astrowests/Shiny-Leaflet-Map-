@@ -10,10 +10,6 @@
 library(shiny)
 library(leaflet)
 
-m <- leaflet(options = leafletOptions())%>%
-    setView(lat = -7.78818672144489, lng = 110.36432939487459,zoom = 9) %>% 
-    addTiles() %>% 
-    addMarkers(lat = -7.78818672144489,lng = 110.36432939487459 )
 
 
 # Define UI for application that draws a histogram
